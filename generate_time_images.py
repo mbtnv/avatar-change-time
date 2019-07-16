@@ -14,14 +14,11 @@ def convert_time_to_string(dt):
 def change_img():
     start_time = datetime.utcnow()
     text = convert_time_to_string(start_time)
-    row = Image.new('RGBA', (200, 200), "white")
+    row = Image.new('RGBA', (200, 200), "black")
     parsed = ImageDraw.Draw(row)
-    font = ImageFont.truetype("arial.ttf", FONT_SIZE)
-    font2 = ImageFont.truetype("arial.ttf", 18)
+    font = ImageFont.truetype("DS-DIGIT.ttf", FONT_SIZE)
     parsed.text((int(row.size[0]*0.2), int(row.size[1]*0.35)), f'{text}', 
-                 align="center", font=font, fill=(33,33,212))
-    parsed.text((53, 125),'Moscow time', 
-                 align="center", font=font2, fill=(33,33,212))
+                 align="center", font=font, fill=(14,234,18))
     row.save(f'time.png', "PNG")
 
 if __name__ == '__main__':
